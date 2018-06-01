@@ -2,6 +2,7 @@ package de.syrocon.jee8demo.jpa;
 
 import java.time.LocalDate;
 
+import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
@@ -15,6 +16,7 @@ public class Book {
 
 	private String name;
 
+	@JsonbDateFormat("dd.MM.yyyy")
 	private LocalDate published;
 
 	public Book() {
