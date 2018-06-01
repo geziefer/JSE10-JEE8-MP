@@ -9,13 +9,12 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 @ApplicationScoped
-@Path("/")
+@Path("/cdidemo")
 public class EventProducer {
 	@Inject
 	Event<GreetEvent> eventSource;
 
 	@GET
-	@Path("/testPriorityEvents")
 	public void fireEvents() {
 		System.out.println("Fired 1st event");
 		eventSource.fire(new GreetEvent("Hello at " + LocalTime.now()));
@@ -23,11 +22,7 @@ public class EventProducer {
 		eventSource.fire(new GreetEvent("Hello at " + LocalTime.now()));
 		System.out.println("Fired 3rd event");
 		eventSource.fire(new GreetEvent("Hello at " + LocalTime.now()));
-	}
 
-	@GET
-	@Path("/testAsyncEvents")
-	public void fireAsyncEvents() {
 		System.out.println("Fired 1st event");
 		eventSource.fireAsync(new GreetEvent("Hello at " + LocalTime.now()));
 		System.out.println("Fired 2nd event");
