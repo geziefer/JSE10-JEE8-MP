@@ -11,7 +11,7 @@ import org.eclipse.microprofile.health.HealthCheckResponse;
 @ApplicationScoped
 public class MPHealthCheck implements HealthCheck {
 	public HealthCheckResponse call() {
-		return HealthCheckResponse.named("ping").up().withData("AS: OK", "DB: OK").build();
+		return HealthCheckResponse.named("ping").up().withData("Hello", "world").build();
 	}
 
 }

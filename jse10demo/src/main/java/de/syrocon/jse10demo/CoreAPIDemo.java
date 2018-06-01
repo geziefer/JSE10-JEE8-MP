@@ -1,4 +1,4 @@
-package de.syrocon.jse10;
+package de.syrocon.jse10demo;
 
 import java.util.Arrays;
 import java.util.List;
