@@ -1,4 +1,4 @@
-package de.syrocon.jee8demo.rest;
+package de.syrocon.jee8demo;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
