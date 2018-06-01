@@ -16,7 +16,7 @@ public class BookService {
 
 	@GET
 	public void query() {
-		Stream<Book> books = em.createQuery("SELECT b FROM Book b", Book.class).getResultStream();
+		Stream<Book> books = em.createNamedQuery("Book.findAll", Book.class).getResultStream();
 		books.map(b -> b.getName() + "/" + b.getPublished()).forEach(System.out::println);
 
 	}

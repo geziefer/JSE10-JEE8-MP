@@ -23,11 +23,11 @@ public class EventProducer {
 		System.out.println("Fired 3rd event");
 		eventSource.fire(new GreetEvent("Hello at " + LocalTime.now()));
 
-		System.out.println("Fired 1st event");
+		System.out.println("Fired 1st async event");
 		eventSource.fireAsync(new GreetEvent("Hello at " + LocalTime.now()));
-		System.out.println("Fired 2nd event");
+		System.out.println("Fired 2nd async event");
 		eventSource.fireAsync(new GreetEvent("Hello at " + LocalTime.now()));
-		System.out.println("Fired 3rd event");
+		System.out.println("Fired 3rd async event");
 		eventSource.fireAsync(new GreetEvent("Hello at " + LocalTime.now()));
 	}
 }

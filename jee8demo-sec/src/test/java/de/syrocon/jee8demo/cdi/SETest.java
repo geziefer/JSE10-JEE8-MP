@@ -10,8 +10,8 @@ public class SETest {
 	@Test
 	public void test() {
 		SeContainer seContainer = SeContainerInitializer.newInstance().initialize();
-		Greeter greeting = seContainer.select(Greeter.class).get();
-		greeting.greet();
+		Greeter greeter = seContainer.select(Greeter.class).get();
+		greeter.greet();
 		seContainer.close();
 	}
 
