@@ -25,13 +25,13 @@ public class CoreAPIDemo {
 		System.out.println(text instanceof String);
 		String var;
 		zahl = 1; // zahl = 1.5 results in compile error
-		
+
 		var numbers = Arrays.asList(1, 2, 3); // List<Integer>
-		for (var number: numbers) { // Integer
+		for (var number : numbers) { // Integer
 			System.out.println(number instanceof Integer);
-		    System.out.println(number);
+			System.out.println(number);
 		}
-		
+
 		var factor = 2; // effectively final
 		numbers = List.of(2, 16, 4, 12, 38, 15, 1);
 		numbers.stream().forEach(v -> System.out.println(v * factor)); // final variable can be used in lambda expression
@@ -41,6 +41,11 @@ public class CoreAPIDemo {
 		List<Integer> numbers = List.of(2, 16, 4, 12, 38, 15, 1);
 		List<Integer> singleDigits = numbers.stream().filter(v -> v < 10).collect(Collectors.toUnmodifiableList());
 		singleDigits.forEach(System.out::println);
+		try {
+			singleDigits.add(16);
+		} catch (UnsupportedOperationException e) {
+			System.out.println("UnsupportedOperationException caught - list ist not modifiable");
+		}
 	}
 
 	@SuppressWarnings("unused")
