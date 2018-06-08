@@ -17,7 +17,7 @@ public class EventObserver {
 		System.out.println("1st Observer: " + e.getMessage());
 	}
 
-	public void observe2nd(@Observes @Priority(Interceptor.Priority.APPLICATION + 1) GreetEvent e) {
+	public void observe2nd(@Observes @Priority(Interceptor.Priority.APPLICATION + 2) GreetEvent e) {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException ex) {
